@@ -1,0 +1,7 @@
+{
+  "name": "EasyTodo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
