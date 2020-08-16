@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonList } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonList, IonItemSliding, IonItemOptions, IonItem, IonLabel, IonItemDivider, IonToggle, IonCheckbox } from '@ionic/react';
 import React, { useState, useRef, useEffect } from 'react';
 import './Home.css';
 import {Slider} from '../components/Slider';
@@ -7,9 +7,12 @@ import {Pulldown} from '../components/Pulldown';
 
 
 
-const Home: React.FC = () => {
+const Home: React.FC<{
+  initialLabel: any;
+  setInitialLabel: any;
+}> = (props) => {
 
-  const [todos, setTodos] = useState<object[]>([]); 
+  const [todos, setTodos] = useState<any>([]); 
   const [pagePulled, setPagePulled] = useState(false);
   const [inputTodo, setInputTodo] = useState('');
 
@@ -38,11 +41,19 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
+
+   {/*  {
+    {initialLabel} && (<IonItem>
+      <IonLabel color="dark">{initialLabel}</IonLabel>
+    </IonItem>) 
+    } */}
+
       {/* <Slider />  */}
         <Pulldown todos={todos} 
                   setTodos={setTodos} 
                   pagePulled={pagePulled} 
                   setPagePulled={setPagePulled}
+                  // setInitialLabel={setInitialLabel}
         />
         
         {
@@ -50,7 +61,7 @@ const Home: React.FC = () => {
         <IonInput
           autofocus={pagePulled}
           value={inputTodo}
-          placeholder="add your todo"
+          placeholder={pagePulled? 'add your todo': ''}
           onIonChange={e => setInputTodo(e.detail.value!)}
           //onIonChange={e => console.log(e.detail.value)}
           onIonBlur={e => addTodo()}

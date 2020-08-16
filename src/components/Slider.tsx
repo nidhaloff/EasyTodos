@@ -28,19 +28,16 @@ export const Slider: React.FC<{
   }
 
  return (
-<IonList>
-  {/* Sliding item with text options on both sides */}
   <IonItemSliding>
     <IonItemOptions side="start" onIonSwipe={(e) => completeTodo()}>
     </IonItemOptions>
 
-    <IonItem>
-      <IonLabel color={props.todoObj.completed ? "danger":"primary"}>{props.todoObj.todo}</IonLabel>
+    <IonItem color={props.todoObj.completed ? "danger":"success"}>
+      <IonLabel className={props.todoObj.completed ? "task-done":"todo"}>{props.todoObj.todo}</IonLabel>
     </IonItem>
 
     <IonItemOptions side="end" onIonSwipe={e => deleteTodo()}>
     </IonItemOptions>
   </IonItemSliding>
-  </IonList>
   )
  }

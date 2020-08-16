@@ -11,6 +11,7 @@ export const Pulldown: React.FC<{
     setTodos: any; 
     pagePulled: boolean;
     setPagePulled: any;
+    //setInitialLabel: any;
 
 }> = (props) => {
 
@@ -18,13 +19,13 @@ export const Pulldown: React.FC<{
     function doRefresh(event: CustomEvent<RefresherEventDetail>) {
 
         props.setPagePulled(true);
-
-        console.log('Begin async operation');
+        //props.setInitialLabel('');
+        //console.log('Begin async operation');
       
         setTimeout(() => {
-          console.log('Async operation has ended');
+          //console.log('Async operation has ended');
           event.detail.complete();
-        }, 10);
+        }, 100);
       }
 
     return (

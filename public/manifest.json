@@ -1,6 +1,6 @@
 {
-  "short_name": "Ionic App",
-  "name": "My Ionic App",
+  "short_name": "EasyTodos",
+  "name": "EasyTodos: organize your todos",
   "icons": [
     {
       "src": "assets/icon/favicon.png",
