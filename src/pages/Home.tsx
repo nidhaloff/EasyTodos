@@ -42,18 +42,11 @@ const Home: React.FC<{
     <IonPage>
       <IonContent>
 
-   {/*  {
-    {initialLabel} && (<IonItem>
-      <IonLabel color="dark">{initialLabel}</IonLabel>
-    </IonItem>) 
-    } */}
-
       {/* <Slider />  */}
         <Pulldown todos={todos} 
                   setTodos={setTodos} 
                   pagePulled={pagePulled} 
                   setPagePulled={setPagePulled}
-                  // setInitialLabel={setInitialLabel}
         />
         
         {
@@ -63,7 +56,6 @@ const Home: React.FC<{
           value={inputTodo}
           placeholder={pagePulled? 'add your todo': ''}
           onIonChange={e => setInputTodo(e.detail.value!)}
-          //onIonChange={e => console.log(e.detail.value)}
           onIonBlur={e => addTodo()}
         ></IonInput>
           }
